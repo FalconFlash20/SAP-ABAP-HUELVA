@@ -23,7 +23,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_dron_20 IMPLEMENTATION.
+CLASS ZCL_DRON_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     bateria = 100.
     carga_max = i_carga_max.
@@ -31,16 +33,19 @@ CLASS zcl_dron_20 IMPLEMENTATION.
     reserva = abap_false.
   ENDMETHOD.
 
+
   METHOD consultar_estado.
     o_bateria = bateria.
     o_carga_act = carga_act.
     o_reserva = reserva.
   ENDMETHOD.
 
+
   METHOD recargar.
     bateria = 100.
     reserva = abap_false.
   ENDMETHOD.
+
 
   METHOD recoger_paquete.
     if i_paquete + carga_act < carga_max and bateria > 20.
@@ -50,6 +55,7 @@ CLASS zcl_dron_20 IMPLEMENTATION.
         rv_exito = abap_false.
     endif.
   ENDMETHOD.
+
 
   METHOD volar_a_cliente.
     if bateria > 15 or reserva.
@@ -66,5 +72,4 @@ CLASS zcl_dron_20 IMPLEMENTATION.
     endif.
     endif.
   ENDMETHOD.
-
 ENDCLASS.

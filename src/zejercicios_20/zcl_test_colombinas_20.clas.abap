@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_colombinas_20 IMPLEMENTATION.
+CLASS ZCL_TEST_COLOMBINAS_20 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     DATA: lo_caseta    TYPE REF TO zcl_caseta_20,
           lo_atf       TYPE REF TO zcl_atraccion_feria_20,

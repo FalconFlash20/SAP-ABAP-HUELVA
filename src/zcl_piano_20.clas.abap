@@ -15,11 +15,14 @@ ENDCLASS.
 
 
 
-CLASS zcl_piano_20 IMPLEMENTATION.
+CLASS ZCL_PIANO_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     super->constructor( i_marca = i_marca ).
     me->es_electrico = i_es_electrico.
   ENDMETHOD.
+
 
   METHOD pedalear.
     IF horas >= 1.
@@ -28,5 +31,4 @@ CLASS zcl_piano_20 IMPLEMENTATION.
       rv_exito = abap_false.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

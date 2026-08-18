@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_ascensor_20 IMPLEMENTATION.
+CLASS ZCL_TEST_ASCENSOR_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

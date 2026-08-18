@@ -18,11 +18,15 @@ ENDCLASS.
 
 
 
-CLASS zcl_deposito_20 IMPLEMENTATION.
+CLASS ZCL_DEPOSITO_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     capacidad = i_capacidad.
     litros = 0.
   ENDMETHOD.
+
+
   METHOD repostar_deposito.
     IF ( i_litros + litros ) > capacidad.
       litros = capacidad.
@@ -30,6 +34,8 @@ CLASS zcl_deposito_20 IMPLEMENTATION.
       litros = litros + i_litros.
     ENDIF.
   ENDMETHOD.
+
+
   METHOD despachar_deposito.
     IF litros - i_litros_desp < 0.
       rv_exito = abap_false.
@@ -38,6 +44,8 @@ CLASS zcl_deposito_20 IMPLEMENTATION.
       rv_exito = abap_true.
     ENDIF.
   ENDMETHOD.
+
+
   METHOD consultar_nivel.
     rv_litros = litros.
   ENDMETHOD.

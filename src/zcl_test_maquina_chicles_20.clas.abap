@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_maquina_chicles_20 IMPLEMENTATION.
+CLASS ZCL_TEST_MAQUINA_CHICLES_20 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA(lo_maquina_chicles) = NEW zcl_maquina_chicles_20( 2 ).

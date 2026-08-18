@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_insertar_datos_20 IMPLEMENTATION.
+CLASS ZCL_INSERTAR_DATOS_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

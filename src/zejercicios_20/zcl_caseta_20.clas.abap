@@ -15,11 +15,14 @@ ENDCLASS.
 
 
 
-CLASS zcl_caseta_20 IMPLEMENTATION.
+CLASS ZCL_CASETA_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     super->constructor( i_nombre = i_nombre_cas ).
     rebujitos = i_rebujitos.
   ENDMETHOD.
+
 
   METHOD pedir_rebujito.
     rv_exito = abap_false.
@@ -28,5 +31,4 @@ CLASS zcl_caseta_20 IMPLEMENTATION.
       rv_exito = abap_true.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

@@ -15,13 +15,16 @@ ENDCLASS.
 
 
 
-CLASS zcl_atraccion_feria_20 IMPLEMENTATION.
+CLASS ZCL_ATRACCION_FERIA_20 IMPLEMENTATION.
+
+
   METHOD calcular_precio_entrada.
     rv_importe = super->calcular_precio_entrada( ) + precio_fijo.
   ENDMETHOD.
+
+
   METHOD constructor.
     super->constructor( i_nombre = i_nombre_atf ).
     precio_fijo = i_precio.
   ENDMETHOD.
-
 ENDCLASS.

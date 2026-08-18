@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_deposito_20 IMPLEMENTATION.
+CLASS ZCL_TEST_DEPOSITO_20 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA lv_exito TYPE abap_bool.

@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_taller_bici_20 IMPLEMENTATION.
+CLASS ZCL_TEST_TALLER_BICI_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

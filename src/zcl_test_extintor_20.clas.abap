@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_extintor_20 IMPLEMENTATION.
+CLASS ZCL_TEST_EXTINTOR_20 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA(lo_extintor) = NEW zcl_extintor_20( 100 ).

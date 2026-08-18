@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_chiringuito_20 IMPLEMENTATION.
+CLASS ZCL_TEST_CHIRINGUITO_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

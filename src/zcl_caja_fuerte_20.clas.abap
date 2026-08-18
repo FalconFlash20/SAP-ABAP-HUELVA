@@ -18,7 +18,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_caja_fuerte_20 IMPLEMENTATION.
+CLASS ZCL_CAJA_FUERTE_20 IMPLEMENTATION.
+
+
   METHOD abrir.
     rv_exito = abap_false.
     IF esta_bloqueada = abap_false.
@@ -35,14 +37,15 @@ CLASS zcl_caja_fuerte_20 IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD constructor.
     codigo = i_codigo.
     intentos_fallidos = 0.
     esta_bloqueada = abap_false.
   ENDMETHOD.
 
+
   METHOD get_bloqueada.
     rv_bloqueada = esta_bloqueada.
   ENDMETHOD.
-
 ENDCLASS.

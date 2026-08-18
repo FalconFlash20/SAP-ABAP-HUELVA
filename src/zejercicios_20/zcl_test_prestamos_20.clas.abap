@@ -12,7 +12,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_prestamos_20 IMPLEMENTATION.
+CLASS ZCL_TEST_PRESTAMOS_20 IMPLEMENTATION.
+
+
   METHOD if_oo_adt_classrun~main.
     out->write( |Total préstamos realizados: { zcl_prestamo_biblioteca_20=>consultar_total_prestamos( ) }| ).
     out->write( |Préstamos pendientes:       { zcl_prestamo_biblioteca_20=>consultar_pendientes( ) }| ).

@@ -25,7 +25,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_prestamo_biblioteca_20 IMPLEMENTATION.
+CLASS ZCL_PRESTAMO_BIBLIOTECA_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     me->nombre = i_nombre.
     me->titulo = i_titulo.
@@ -34,19 +36,23 @@ CLASS zcl_prestamo_biblioteca_20 IMPLEMENTATION.
     prestamos_pendientes       = prestamos_pendientes + 1.
   ENDMETHOD.
 
+
   METHOD consultar_datos.
     o_nombre = me->nombre.
     o_titulo = me->titulo.
     o_devuelto = me->devuelto.
   ENDMETHOD.
 
+
   METHOD consultar_pendientes.
     rv_pendientes = prestamos_pendientes.
   ENDMETHOD.
 
+
   METHOD consultar_total_prestamos.
     rv_prestamos_realizados = total_prestamos_realizados.
   ENDMETHOD.
+
 
   METHOD marcar_devuelto.
     IF NOT devuelto.
@@ -54,5 +60,4 @@ CLASS zcl_prestamo_biblioteca_20 IMPLEMENTATION.
       Prestamos_pendientes = Prestamos_pendientes - 1.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

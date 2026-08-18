@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_instrumentos_20 IMPLEMENTATION.
+CLASS ZCL_TEST_INSTRUMENTOS_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_bombilla_20 IMPLEMENTATION.
+CLASS ZCL_TEST_BOMBILLA_20 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
 

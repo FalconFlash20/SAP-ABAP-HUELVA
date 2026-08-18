@@ -16,14 +16,19 @@ ENDCLASS.
 
 
 
+CLASS ZCL_BOMBILLA_20 IMPLEMENTATION.
 
-CLASS zcl_bombilla_20 IMPLEMENTATION.
+
   METHOD encender.
     esta_encendida = abap_true.
   ENDMETHOD.
+
+
   METHOD get_encendida.
     rv_encendiad = esta_encendida.
   ENDMETHOD.
+
+
   METHOD constructor.
     potencia = i_potencia.
   ENDMETHOD.

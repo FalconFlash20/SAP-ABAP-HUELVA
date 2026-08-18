@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_inner_join_20 IMPLEMENTATION.
+CLASS ZCL_INNER_JOIN_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

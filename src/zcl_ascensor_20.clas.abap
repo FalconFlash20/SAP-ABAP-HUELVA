@@ -25,7 +25,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_ascensor_20 IMPLEMENTATION.
+CLASS ZCL_ASCENSOR_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     planta_max = i_planta_max.
     peso_max   = i_peso_max.
@@ -34,11 +36,13 @@ CLASS zcl_ascensor_20 IMPLEMENTATION.
     bloqueado  = abap_false.
   ENDMETHOD.
 
+
   METHOD consultar_estado.
     o_planta_act = planta_act.
     o_peso_act   = peso_act.
     o_bloqueado  = bloqueado.
   ENDMETHOD.
+
 
   METHOD entrar_peso.
     IF peso_act + i_peso > peso_max.
@@ -47,6 +51,7 @@ CLASS zcl_ascensor_20 IMPLEMENTATION.
       peso_act = peso_act + i_peso.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD subir_planta.
     IF bloqueado = abap_false.
@@ -57,9 +62,9 @@ CLASS zcl_ascensor_20 IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD vaciar.
     peso_act = 0.
     bloqueado = abap_false.
   ENDMETHOD.
-
 ENDCLASS.

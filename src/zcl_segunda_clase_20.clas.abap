@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_segunda_clase_20 IMPLEMENTATION.
+CLASS ZCL_SEGUNDA_CLASE_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

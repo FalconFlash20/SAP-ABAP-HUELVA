@@ -17,23 +17,27 @@ ENDCLASS.
 
 
 
-CLASS zcl_chiringuito_20 IMPLEMENTATION.
+CLASS ZCL_CHIRINGUITO_20 IMPLEMENTATION.
+
+
   METHOD calcular_comision_ayuntamiento.
     rv_importe = recaudacion * '0.1'.
   ENDMETHOD.
 
+
   METHOD consulta_recaudacion.
     rv_recaudacion = recaudacion.
   ENDMETHOD.
+
 
   METHOD vender.
     recaudacion = recaudacion + i_importe.
     rv_exito = abap_true.
   ENDMETHOD.
 
+
   METHOD constructor.
     nombre = i_nombre.
     recaudacion = i_recaudacion.
   ENDMETHOD.
-
 ENDCLASS.

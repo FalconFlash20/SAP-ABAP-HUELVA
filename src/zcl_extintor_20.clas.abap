@@ -15,15 +15,21 @@ ENDCLASS.
 
 
 
-CLASS zcl_extintor_20 IMPLEMENTATION.
+CLASS ZCL_EXTINTOR_20 IMPLEMENTATION.
+
+
   METHOD constructor.
     carga = i_carga.
   ENDMETHOD.
+
+
   METHOD usar.
     IF carga > 35.
       carga -= 35.
     ENDIF.
   ENDMETHOD.
+
+
   METHOD consultar_carga.
     rv_carga = carga.
   ENDMETHOD.

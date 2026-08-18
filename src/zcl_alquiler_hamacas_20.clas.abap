@@ -15,10 +15,13 @@ ENDCLASS.
 
 
 
-CLASS zcl_alquiler_hamacas_20 IMPLEMENTATION.
+CLASS ZCL_ALQUILER_HAMACAS_20 IMPLEMENTATION.
+
+
   METHOD calcular_comision_ayuntamiento.
     rv_importe = super->calcular_comision_ayuntamiento(  ) * 2.
   ENDMETHOD.
+
 
   METHOD constructor.
 
@@ -26,8 +29,8 @@ CLASS zcl_alquiler_hamacas_20 IMPLEMENTATION.
     sombrillas = i_sombrillas.
   ENDMETHOD.
 
+
   METHOD reservar_sombrilla.
     sombrillas -= i_num_s.
   ENDMETHOD.
-
 ENDCLASS.

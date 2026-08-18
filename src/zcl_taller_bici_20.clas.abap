@@ -44,7 +44,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_taller_bici_20 IMPLEMENTATION.
+CLASS ZCL_TALLER_BICI_20 IMPLEMENTATION.
+
 
   METHOD registrar_reparacion.
     DATA: lv_max_id TYPE ztaller_bicis_20-id_reparacion.
@@ -60,6 +61,8 @@ CLASS zcl_taller_bici_20 IMPLEMENTATION.
     ).
     INSERT ztaller_bicis_20 FROM @ls_reparacion.
   ENDMETHOD.
+
+
   METHOD consultar_reparacion.
     SELECT SINGLE cliente, averia, estado
       FROM ztaller_bicis_20
@@ -95,5 +98,4 @@ CLASS zcl_taller_bici_20 IMPLEMENTATION.
       rv_exito = abap_false.
     ENDIF.
   ENDMETHOD.
-
 ENDCLASS.

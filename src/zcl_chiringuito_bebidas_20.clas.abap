@@ -15,7 +15,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_chiringuito_bebidas_20 IMPLEMENTATION.
+CLASS ZCL_CHIRINGUITO_BEBIDAS_20 IMPLEMENTATION.
+
+
   METHOD anadir_hielo.
     rv_exito = abap_false.
     IF hielo > 0.
@@ -23,6 +25,7 @@ CLASS zcl_chiringuito_bebidas_20 IMPLEMENTATION.
       hielo = hielo - 1.
     ENDIF.
   ENDMETHOD.
+
 
   METHOD vender.
     IF i_importe < '1.50'.
@@ -33,10 +36,10 @@ CLASS zcl_chiringuito_bebidas_20 IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+
   METHOD constructor.
 
     super->constructor( i_nombre = nombre i_recaudacion = recaudacion ).
     hielo = i_hielo.
   ENDMETHOD.
-
 ENDCLASS.

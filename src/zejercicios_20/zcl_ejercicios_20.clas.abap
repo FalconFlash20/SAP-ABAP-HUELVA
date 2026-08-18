@@ -12,7 +12,7 @@ ENDCLASS.
 
 
 
-CLASS zcl_ejercicios_20 IMPLEMENTATION.
+CLASS ZCL_EJERCICIOS_20 IMPLEMENTATION.
 
 
   METHOD if_oo_adt_classrun~main.

@@ -12,7 +12,8 @@ ENDCLASS.
 
 
 
-CLASS zcl_test_cafetera_20 IMPLEMENTATION.
+CLASS ZCL_TEST_CAFETERA_20 IMPLEMENTATION.
+
 
   METHOD if_oo_adt_classrun~main.
     DATA(lo_cafetera) = NEW zcl_cafetera_20( 600 ).
