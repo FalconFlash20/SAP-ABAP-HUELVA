@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_INCIDENCIA_20'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_INCIDENCIA_20'
+  }
+}
+define service ZUI_INCIDENCIA_20_O4 provider contracts odata_v4_ui {
+  expose ZC_INCIDENCIA_20;
+}

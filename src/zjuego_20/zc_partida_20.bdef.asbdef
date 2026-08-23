@@ -1,0 +1,11 @@
+projection;
+strict ( 2 );
+
+define behavior for ZC_PARTIDA_20 alias Partida
+{
+  use create;
+  use update;
+  use delete;
+
+  use action jugar;
+}

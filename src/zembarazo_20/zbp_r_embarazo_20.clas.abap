@@ -1,8 +1,6 @@
 class ZBP_R_EMBARAZO_20 definition
   public
-  abstract
-  final
-  for behavior of ZR_EMBARAZO_20 .
+  create private .
 
 public section.
 protected section.

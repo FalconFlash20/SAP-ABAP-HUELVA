@@ -1,0 +1,32 @@
+managed implementation in class zbp_r_partida_20 unique;
+strict ( 2 );
+
+define behavior for ZR_PARTIDA_20 alias Partida
+persistent table zpartida_20
+lock master
+authorization master ( global )
+etag master LocalLastChangedAt
+early numbering
+{
+  create;
+  update;
+  delete;
+  field ( readonly ) GameId, Resultado;
+  field ( mandatory ) Jugador1, Jugador2;
+
+  action jugar result [1] $self;
+
+  validation validarJugadas on save { field Jugador1, Jugador2; }
+
+  mapping for zpartida_20
+  {
+    GameId = game_id;
+    Jugador1 = jugador1;
+    Jugador2 = jugador2;
+    Resultado = resultado;
+    CreatedBy = created_by;
+    LastChangedBy = last_changed_by;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}

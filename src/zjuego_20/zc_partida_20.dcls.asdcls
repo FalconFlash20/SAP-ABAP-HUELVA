@@ -1,0 +1,7 @@
+@EndUserText.label: 'Access Control para ZC_PARTIDA_20'
+@MappingRole: true
+define role ZC_PARTIDA_20 {
+  grant select
+    on ZC_PARTIDA_20
+      where INHERITING CONDITIONS FROM ENTITY ZR_PARTIDA_20;
+}

@@ -1,6 +1,0 @@
-@EndUserText.label: 'ZC_EMBARAZO_20'
-@MappingRole: true
-define role ZC_EMBARAZO_20 {
-  grant select on ZC_EMBARAZO_20
-  where INHERITING CONDITIONS FROM ENTITY ZR_EMBARAZO_20 REPLACING { ROOT WITH _BaseEntity };
-}

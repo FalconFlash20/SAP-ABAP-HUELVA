@@ -1,0 +1,42 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: {
+  typeName: 'Partida',
+  typeNamePlural: 'Partidas',
+  title: { type: #STANDARD, value: 'GameId' }
+}
+annotate view ZC_PARTIDA_20 with
+{
+  @UI.facet: [ {
+    label: 'Información General', 
+    id: 'GeneralInfo', 
+    purpose: #STANDARD, 
+    position: 10, 
+    type: #IDENTIFICATION_REFERENCE
+  } ]
+
+  @UI.lineItem: [ 
+    { position: 10, label: 'ID Partida' },
+    { type: #FOR_ACTION, dataAction: 'jugar', label: 'JUGAR', position: 10 }
+  ]
+  @UI.identification: [ 
+    { position: 10, label: 'ID Partida' },
+    { type: #FOR_ACTION, dataAction: 'jugar', label: 'JUGAR', position: 10 }
+  ]
+  @UI.selectionField: [ { position: 10 } ]
+  GameId;
+  
+  @UI.lineItem: [ { position: 20, label: 'Jugador 1' } ]
+  @UI.identification: [ { position: 20, label: 'Jugador 1' } ]
+  @UI.selectionField: [ { position: 20 } ]
+  Jugador1;
+  
+  @UI.lineItem: [ { position: 30, label: 'Jugador 2' } ]
+  @UI.identification: [ { position: 30, label: 'Jugador 2' } ]
+  @UI.selectionField: [ { position: 30 } ]
+  Jugador2;
+  
+  @UI.lineItem: [ { position: 40, label: 'Resultado' } ]
+  @UI.identification: [ { position: 40, label: 'Resultado' } ]
+  @UI.selectionField: [ { position: 40 } ]
+  Resultado;
+}
