@@ -1,0 +1,12 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_Penaltis_20'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_Penaltis_20'
+  }
+}
+define service ZUI_Penaltis_20_O4
+  provider contracts odata_v4_ui {
+  expose ZC_PENALTIS_20;
+}

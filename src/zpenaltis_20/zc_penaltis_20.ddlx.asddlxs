@@ -1,0 +1,51 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: {
+    typeName: 'Penalti',
+    typeNamePlural: 'Lanzamientos de Penalti',
+    title: { type: #STANDARD, value: 'NumLanzamiento' }
+  }
+}
+annotate view ZC_PENALTIS_20 with
+{
+  @UI.facet: [
+    {
+      id: 'GeneralInfo',
+      type: #COLLECTION,
+      label: 'Información del Lanzamiento',
+      position: 10
+    },
+    {
+      id: 'DetalleLanzamiento',
+      type: #FIELDGROUP_REFERENCE,
+      targetQualifier: 'GrupoDetalles',
+      position: 10,
+      parentId: 'GeneralInfo'
+    }
+  ]
+
+  @UI.lineItem: [{ position: 10, label: 'Nº Lanzamiento' }]
+  @UI.fieldGroup: [{ position: 10, qualifier: 'GrupoDetalles', label: 'Nº Lanzamiento' }]
+  NumLanzamiento;
+
+  @UI.lineItem: [{ position: 20, label: 'Lanzador' }]
+  @UI.fieldGroup: [{ position: 20, qualifier: 'GrupoDetalles', label: 'Lanzador' }]
+  @UI.selectionField: [{ position: 10 }]
+  Lanzador;
+
+  @UI.lineItem: [{ position: 30, label: 'Dirección Disparo' }]
+  @UI.fieldGroup: [{ position: 30, qualifier: 'GrupoDetalles', label: 'Dirección Disparo' }]
+  DirDisparo;
+
+  @UI.lineItem: [{ position: 40, label: 'Portero' }]
+  @UI.fieldGroup: [{ position: 40, qualifier: 'GrupoDetalles', label: 'Portero' }]
+  Portero;
+
+  @UI.lineItem: [{ position: 50, label: 'Dirección Portero' }]
+  @UI.fieldGroup: [{ position: 50, qualifier: 'GrupoDetalles', label: 'Dirección Portero' }]
+  DirPortero;
+
+  @UI.lineItem: [{ position: 60, label: 'Resultado' }]
+  @UI.fieldGroup: [{ position: 60, qualifier: 'GrupoDetalles', label: 'Resultado' }]
+  Resultado;
+}

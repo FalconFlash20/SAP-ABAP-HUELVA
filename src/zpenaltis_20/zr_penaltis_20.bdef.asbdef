@@ -1,0 +1,42 @@
+managed implementation in class zbp_r_penaltis_20 unique;
+strict ( 2 );
+with draft;
+
+define behavior for ZR_PENALTIS_20 alias Penalti
+persistent table zpenaltis_20
+draft table zpenaltis_20_d
+lock master total etag LocalLastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+early numbering
+{
+  create;
+  update;
+  delete;
+
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( readonly ) NumLanzamiento, Resultado;
+  field ( mandatory ) Lanzador, DirDisparo, Portero, DirPortero;
+
+  determination calcularResultado on modify { field DirDisparo, DirPortero; }
+
+  mapping for zpenaltis_20
+  {
+    NumLanzamiento     = num_lanzamiento;
+    Lanzador           = lanzador;
+    DirDisparo         = dir_disparo;
+    Portero            = portero;
+    DirPortero         = dir_portero;
+    Resultado          = resultado;
+    CreatedBy          = created_by;
+    CreatedAt          = created_at;
+    LastChangedBy      = last_changed_by;
+    LastChangedAt      = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+  }
+}
