@@ -1,18 +1,19 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'Value Help - Jugada'
+@EndUserText.label: 'Ayuda de búsqueda Jugada'
+@Metadata.ignorePropagatedAnnotations: true
+
 @ObjectModel.resultSet.sizeCategory: #XS
 
 define view entity ZI_JUGADA_VH
-  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T( p_domain_name: 'ZJUGADA_20' )
+  as select from DDCDS_CUSTOMER_DOMAIN_VALUE_T(
+    p_domain_name : 'ZDO_P_J'
+  )
 {
-  @UI.hidden: true
-  key domain_name,
-  @UI.hidden: true
-  key value_position,
-  @UI.hidden: true
-  key language,
-  @EndUserText.label: 'Jugada'
-  key value_low as Jugada,
-      @EndUserText.label: 'Descripción'
-      text      as Descripcion
+    @ObjectModel.text.element: ['Descripcion']
+    @UI.textArrangement: #TEXT_ONLY
+    key value_low as Jugada,
+
+    @Semantics.text: true
+    text          as Descripcion
 }
+where language = $session.system_language

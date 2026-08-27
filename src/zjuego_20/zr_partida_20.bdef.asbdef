@@ -1,32 +1,67 @@
-managed implementation in class zbp_r_partida_20 unique;
+managed implementation in class ZBP_R_PARTIDA_20 unique;
 strict ( 2 );
-
-define behavior for ZR_PARTIDA_20 alias Partida
+with draft;
+extensible;
+define behavior for ZR_PARTIDA_20 alias ZrPartida20
 persistent table zpartida_20
-lock master
+extensible
+draft table zpartida_20_d
+etag master LastChangedAt
+lock master total etag LocalLastChangedAt
 authorization master ( global )
-etag master LocalLastChangedAt
-early numbering
+early numbering // para inicializar el número de la partida :)
 {
+  //  field ( mandatory : create )
+  //   NumPartida;
+
+  field ( readonly )
+  NumPartida,
+  Ganador,
+  CreatedBy,
+  LastChangedBy,
+  LastChangedAt,
+  LocalLastChangedAt;
+
+  //  field ( readonly : update )
+  //   NumPartida;
+
   create;
   update;
   delete;
-  field ( readonly ) GameId, Resultado;
-  field ( mandatory ) Jugador1, Jugador2;
 
-  action jugar result [1] $self;
-
-  validation validarJugadas on save { field Jugador1, Jugador2; }
-
-  mapping for zpartida_20
+  determination Calcular_Ganador on modify
   {
-    GameId = game_id;
-    Jugador1 = jugador1;
-    Jugador2 = jugador2;
-    Resultado = resultado;
-    CreatedBy = created_by;
-    LastChangedBy = last_changed_by;
-    LastChangedAt = last_changed_at;
-    LocalLastChangedAt = local_last_changed_at;
+    create;
+    field Jugada1, Jugada2, Nombre1, Nombre2;
   }
+
+  side effects
+  {
+    field Jugada1 affects field Ganador;
+    field Jugada2 affects field Ganador;
+    field Nombre1 affects field Ganador;
+    field Nombre2 affects field Ganador;
+  }
+  //  action Calcular_Ganador2 result [1] $self;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for zppt_00 corresponding extensible
+    {
+      NumPartida         = NUM_PARTIDA;
+      Nombre1            = NOMBRE_1;
+      Jugada1            = JUGADA_1;
+      Nombre2            = NOMBRE_2;
+      Jugada2            = JUGADA_2;
+      Ganador            = GANADOR;
+      CreatedBy          = CREATED_BY;
+      LastChangedBy      = LAST_CHANGED_BY;
+      LastChangedAt      = LAST_CHANGED_AT;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    }
+
 }
