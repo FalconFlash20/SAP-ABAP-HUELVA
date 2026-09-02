@@ -1,0 +1,53 @@
+managed implementation in class ZBP_R_Z2020TRAVEL unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_Z2020TRAVEL alias ZrZ2020travel
+persistent table zz2020travel
+extensible
+draft table zz2020travel_d
+etag master LastChangedAt
+lock master total etag LocalLastChangedAt
+authorization master ( none )
+{
+  field ( mandatory : create )
+  TravelID;
+
+  field ( readonly )
+  CreatedBy,
+  LastChangedBy,
+  LastChangedAt,
+  status,
+  LocalLastChangedAt;
+
+  field ( readonly : update )
+  TravelID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  determination setInitialStatus on save { create; }
+
+  mapping for zz2020travel corresponding extensible
+    {
+      TravelID           = TRAVEL_ID;
+      AgencyID           = AGENCY_ID;
+      CustomerID         = CUSTOMER_ID;
+      BeginDate          = BEGIN_DATE;
+      EndDate            = END_DATE;
+      Status             = STATUS;
+      CreatedBy          = CREATED_BY;
+      LastChangedBy      = LAST_CHANGED_BY;
+      LastChangedAt      = LAST_CHANGED_AT;
+      LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+    }
+
+}
