@@ -1,0 +1,48 @@
+@Metadata.layer: #CORE
+@UI.headerInfo: { 
+  typeName: 'Obra', 
+  typeNamePlural: 'Obras y Reformas', 
+  title: { type: #STANDARD, value: 'Cliente' } 
+}
+annotate view ZC_OBRA_20 with
+{
+  @UI.facet: [ 
+    { 
+      id: 'DatosGenerales', 
+      type: #FIELDGROUP_REFERENCE, 
+      position: 10, 
+      label: 'Información General', 
+      targetQualifier: 'GeneralData' 
+    }
+  ]
+
+  @EndUserText.label: 'Código de Obra'
+  @UI.lineItem: [ { position: 10 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 10 } ]
+  IdObra;
+
+  @EndUserText.label: 'Nombre del Cliente'
+  @UI.lineItem: [ { position: 20 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 20 } ]
+  Cliente;
+
+  @EndUserText.label: 'Dirección de la Obra'
+  @UI.lineItem: [ { position: 30 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 30 } ]
+  Direccion;
+
+  @EndUserText.label: 'Fecha de Inicio'
+  @UI.lineItem: [ { position: 40 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 40 } ]
+  FechaInicio;
+
+  @EndUserText.label: 'Estado de la Reforma'
+  @UI.lineItem: [ { position: 50 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 50 } ]
+  Estado;
+
+  @EndUserText.label: 'Presupuesto Total'
+  @UI.lineItem: [ { position: 60 } ]
+  @UI.fieldGroup: [ { qualifier: 'GeneralData', position: 60 } ]
+  PresupuestoTot;
+}

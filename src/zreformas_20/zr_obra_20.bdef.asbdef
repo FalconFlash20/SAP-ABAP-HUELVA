@@ -1,0 +1,41 @@
+managed implementation in class zbp_r_obra_20 unique;
+strict ( 2 );
+with draft; // <--- Habilitamos las funciones de Draft
+
+define behavior for zr_obra_20 alias Obra
+persistent table zobra_20
+draft table zobra_20_d // <--- Asignamos la tabla de borrador
+lock master total etag LastChangedAt
+authorization master ( global )
+etag master LocalLastChangedAt
+{
+  create;
+  update;
+  delete;
+
+  // Acciones estándar requeridas por el framework de Draft
+  draft action Edit;
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Resume;
+  draft determine action Prepare;
+
+  field ( readonly : update ) IdObra;
+  field ( readonly ) LocalCreatedAt, LocalCreatedBy, LastChangedAt, LocalLastChangedAt, LocalLastChangedBy;
+
+  mapping for zobra_20
+  {
+    IdObra = id_obra;
+    Cliente = cliente;
+    Direccion = direccion;
+    FechaInicio = fecha_inicio;
+    Estado = estado;
+    PresupuestoTot = presupuesto_tot;
+    Moneda = moneda;
+    LocalCreatedBy = local_created_by;
+    LocalCreatedAt = local_created_at;
+    LocalLastChangedBy = local_last_changed_by;
+    LocalLastChangedAt = local_last_changed_at;
+    LastChangedAt = last_changed_at;
+  }
+}

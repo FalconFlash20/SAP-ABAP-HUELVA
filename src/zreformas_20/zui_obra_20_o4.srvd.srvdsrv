@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service definition'
+define service ZUI_OBRA_20_O4 {
+  expose ZC_OBRA_20 as Obra;
+}
